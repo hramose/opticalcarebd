@@ -52,10 +52,17 @@
 
                             </a>
                         </li>
-                        <li  class="{{ (Request::is('admin/stock/contactlans')? 'act_item' : '') }}">
-                            <a href="{{ route('contactlans') }}">
+                        <li  class="{{ (Request::is('admin/stock/contactlens')? 'act_item' : '') }}">
+                            <a href="{{ route('contactlens') }}">
                                 <span class="menu_icon"><i class="material-icons">&#xE42A;</i></span>
-                                <span class="menu_title">Contact Lans</span>
+                                <span class="menu_title">Contact Lens</span>
+
+                            </a>
+                        </li>
+                         <li  class="{{ (Request::is('admin/stock/plasticlens')? 'act_item' : '') }}">
+                            <a href="{{ route('plasticlens') }}">
+                                <span class="menu_icon"><i class="material-icons">&#xE42A;</i></span>
+                                <span class="menu_title">Plastic Lens</span>
 
                             </a>
                         </li>

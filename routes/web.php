@@ -29,22 +29,41 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::post('notes','NotesController@addNote');
 
     Route::group(['prefix' => 'stock'], function(){
-        Route::get('frame','StockController@frame')->name('frame');
-        Route::get('api/frame','StockController@getFrame');
-        Route::post('frame','StockController@addFrame');
-        Route::post('frame/edit','StockController@editFrame');
-        Route::post('frame/update','StockController@updateFrame');
-        Route::delete('frame/delete','StockController@deleteFrame');
-        Route::group(['prefix' => 'sunglass'], function(){
-            Route::get('/','StockController@sunglass')->name('sunglass');
-            Route::get('/api','StockController@getSunglass');      
-            Route::post('/','StockController@addSunglass');
-            Route::post('/update','StockController@updateSunglass');
-            Route::post('/edit','StockController@editSunglass');
-            Route::delete('/delete','StockController@deleteSunglass');
-        
-        
+       
+        Route::group(['prefix' => 'frame'], function(){
+            Route::get('/','Stock\FrameController@frame')->name('frame');
+            Route::get('/api','Stock\FrameController@getFrame');
+            Route::post('/','Stock\FrameController@addFrame');
+            Route::post('/update','Stock\FrameController@updateFrame');
+            Route::post('/edit','Stock\FrameController@editFrame');
+            Route::delete('/delete','Stock\FrameController@deleteFrame');
         });
-        Route::get('contactlans','StockController@contactlans')->name('contactlans');
+        
+            Route::group(['prefix' => 'sunglass'], function(){
+                Route::get('/','Stock\SunglassController@sunglass')->name('sunglass');
+                Route::get('/api','Stock\SunglassController@getSunglass');      
+                Route::post('/','Stock\SunglassController@addSunglass');
+                Route::post('/update','Stock\SunglassController@updateSunglass');
+                Route::post('/edit','Stock\SunglassController@editSunglass');
+                Route::delete('/delete','Stock\SunglassController@deleteSunglass');
+            });
+
+            Route::group(['prefix' => 'contactlens'], function(){
+                Route::get('/','Stock\ContactlensController@contactlens')->name('contactlens');
+                Route::get('/api','Stock\ContactlensController@getContactlens');      
+                Route::post('/','Stock\ContactlensController@addContactlens');
+                Route::post('/update','Stock\ContactlensController@updateContactlens');
+                Route::post('/edit','Stock\ContactlensController@editContactlens');
+                Route::delete('/delete','Stock\ContactlensController@deleteContactlens');
+            });
+
+            Route::group(['prefix' => 'plasticlens'], function(){
+                Route::get('/','Stock\PlasticlensController@plasticlens')->name('plasticlens');
+                Route::get('/api','Stock\PlasticlensController@getPlasticlens');      
+                Route::post('/','Stock\PlasticlensController@addPlasticlens');
+                Route::post('/update','Stock\PlasticlensController@updatePlasticlens');
+                Route::post('/edit','Stock\PlasticlensController@editPlasticlens');
+                Route::delete('/delete','Stock\PlasticlensController@deletePlasticlens');
+            });
         });
 });

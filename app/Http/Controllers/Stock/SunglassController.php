@@ -1,65 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\Stock;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Stock;
 use Datatables;
 use Validator;
 use Response;
 
-class StockController extends Controller
+class SunglassController extends Controller
 {
-
-    public function frame()
-    {
-        return view('admin.stock.frame');
-    }
-    public function getFrame()
-    {
-        // $frames = Stock::where('product_type','frame')->orderBy('id','asc')->get();
-        return Datatables::eloquent(Stock::where('product_type','frame')->orderBy('id','asc'))->make(true);
-        
-    }
-    public function addFrame(Request $request)
-    {
-        $this->validate($request,[
-            'category' => 'required'|'unique:stocks',
-            'quantity' => 'required',
-           ]);
-        $frame = new Stock;
-        $frame->category = $request->category;
-        $frame->quantity = $request->quantity;
-        $frame->product_type = "frame";
-        $frame->save();
-        return 'added';
-    }
-    public function editFrame(Request $request)
-    {
-        $id = $request->id;
-        $frame = Stock::find($id);
-        $frame->category = $request->category;
-        $frame->quantity = $request->quantity;
-        $frame->save();
-        return 'Saved';
-    }
-    public function updateFrame(Request $request)
-    {
-        $id = $request->id;
-        $frame = Stock::find($id);
-        $frame->quantity = $request->newQuantity;
-        $frame->save();
-        return 'Updated';
-    }
-    public function deleteFrame(Request $request)
-    {
-        Stock::where('id',$request->id)->delete();
-        return 'Delete Done';
-    }
     public function sunglass()
     {
-        $sunglasses = Stock::where('product_type','sunglass')->orderBy('id','desc')->get();
-         return view('admin.stock.sunglass',compact('sunglasses'));
+         return view('admin.stock.sunglass');
     }
 
     public function getSunglass(Request $request)
@@ -121,10 +74,5 @@ class StockController extends Controller
     {
         Stock::where('id',$request->id)->delete();
         return 'Delete Done';
-    }
-    public function contactlans()
-    {
-        $contactlanses = Stock::where('product_type', 'contactlans')->orderBy('id','desc')->get();
-        return view('admin.stock.contactlans',compact('contactlanses'));
     }
 }
