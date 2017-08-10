@@ -68,8 +68,8 @@
                         </li>
                     </ul>
                 </l>
-                <li title="Sell">
-                    <a href="sell">
+                <li title="Sell" class="{{ (Request::is('admin/sells')? 'current_section' : '') }}">
+                    <a href="{{ route('sells') }}">
                         <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
                         <span class="menu_title">Sell</span>
                     </a>

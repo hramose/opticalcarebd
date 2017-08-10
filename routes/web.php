@@ -27,9 +27,16 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::get('dashboard','AdminController@admin')->name('adminDashboard');
     Route::get('notes','NotesController@notes')->name('notes');
     Route::post('notes','NotesController@addNote');
+    
+    Route::group(['prefix' => 'sells'], function(){
+        Route::get('/','SellsController@index')->name('sells');
+        Route::get('/api','SellsController@getSells');
+        Route::delete('/delete','SellsController@deleteSells');
+
+    });
 
     Route::group(['prefix' => 'stock'], function(){
-       
+     
         Route::group(['prefix' => 'frame'], function(){
             Route::get('/','Stock\FrameController@frame')->name('frame');
             Route::get('/api','Stock\FrameController@getFrame');
