@@ -31,6 +31,8 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::group(['prefix' => 'sells'], function(){
         Route::get('/','SellsController@index')->name('sells');
         Route::get('/api','SellsController@getSells');
+        Route::get('/frame','SellsController@sellFrame')->name('sellFrame');
+        Route::post('/frame','SellsController@newSellFrame');
         Route::delete('/delete','SellsController@deleteSells');
 
     });

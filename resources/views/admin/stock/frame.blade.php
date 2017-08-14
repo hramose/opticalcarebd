@@ -3,12 +3,10 @@
 @section('title')
 Stock Frame
 @endsection
-
+ 
 @section('csslink')
-          <link rel="stylesheet" href="{{ asset('admin/assets/css/sweetalert.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/sweetalert.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-
 @endsection
 
 @section('content')

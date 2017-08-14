@@ -18,10 +18,30 @@ Sells
             <h4 class="heading_a uk-margin-bottom">Sells</h4>
                        <div class="uk-width-medium-1-6">
                 <div class="uk-width-medium-1-3">
-                            <button id="addFrameModel" class="md-btn md-btn-primary md-btn-wave-light waves-effect waves-button waves-light" data-uk-modal="{target:'#model_frame'}">Add&nbsp;New&nbsp;Frame</button>
-                  
+                            <button class="md-btn md-btn-primary md-btn-wave-light waves-effect waves-button waves-light" data-uk-modal="{target:'#sellModel'}">New&nbsp;Sell</button>
                         </div>
              </div>
+                <div class="uk-modal" id="sellModel">
+                        <div class="uk-modal-dialog">
+                            <div class="uk-modal-header">
+                                <h3 class="uk-modal-title">New Sells <i class="material-icons" data-uk-tooltip="{pos:'top'}" title="Select that you want to sell.">&#xE8FD;</i></h3>
+                            </div>
+                            <p>What do you want to sell? </p>
+                            <div class="uk-modal-footer uk-text-right">
+                                    <button type="button" 
+                                        class="md-btn md-btn-small md-btn-flat uk-modal-close">Close</button>
+                                        <a class="md-btn md-btn-small md-btn-primary" 
+                                             href="{{ route('sellFrame') }}">Frame</a>
+                                        <a class="md-btn md-btn-small md-btn-primary" 
+                                             href="{{ route('sellFrame') }}">Sunglass</a>
+                                        <a class="md-btn md-btn-small md-btn-primary"
+                                             href="{{ route('sellFrame') }}">Contact Lens</a>
+                                        <a class="md-btn md-btn-small md-btn-primary" 
+                                             href="{{ route('sellFrame') }}">Plastic Lens</a>
+                                          
+                            </div>
+                        </div>
+                    </div> 
                <br>   
                    
                 <form class="uk-form-stacked" method="POST">
@@ -137,7 +157,7 @@ Sells
                     {data: 'customer_name'},
                     {data: 'phone'},
                     {data: 'product_type'},
-                    {data: 'product_cetagory'},
+                    {data: 'product_category'},
                     {data: 'quantity'},
                     {data: 'total'},
                     {data: 'advance'},
