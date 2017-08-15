@@ -31,9 +31,19 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::group(['prefix' => 'sells'], function(){
         Route::get('/','SellsController@index')->name('sells');
         Route::get('/api','SellsController@getSells');
+        Route::delete('/delete','SellsController@deleteSells');
+
         Route::get('/frame','SellsController@sellFrame')->name('sellFrame');
         Route::post('/frame','SellsController@newSellFrame');
-        Route::delete('/delete','SellsController@deleteSells');
+
+        Route::get('/sunglass','SellsController@sellSunglass')->name('sellSunglass');
+        Route::post('/sunglass','SellsController@newSellSunglass');
+
+        Route::get('/contactlens','SellsController@sellContactlens')->name('sellContactlens');
+        Route::post('/contactlens','SellsController@newSellContactlens');
+
+        Route::get('/plasticlens','SellsController@sellPlasticlens')->name('sellPlasticlens');
+        Route::post('/plasticlens','SellsController@newSellPlasticlens');
 
     });
 

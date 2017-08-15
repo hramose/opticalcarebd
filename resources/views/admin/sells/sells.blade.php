@@ -33,11 +33,11 @@ Sells
                                         <a class="md-btn md-btn-small md-btn-primary" 
                                              href="{{ route('sellFrame') }}">Frame</a>
                                         <a class="md-btn md-btn-small md-btn-primary" 
-                                             href="{{ route('sellFrame') }}">Sunglass</a>
+                                             href="{{ route('sellSunglass') }}">Sunglass</a>
                                         <a class="md-btn md-btn-small md-btn-primary"
-                                             href="{{ route('sellFrame') }}">Contact Lens</a>
+                                             href="{{ route('sellContactlens') }}">Contact Lens</a>
                                         <a class="md-btn md-btn-small md-btn-primary" 
-                                             href="{{ route('sellFrame') }}">Plastic Lens</a>
+                                             href="{{ route('sellPlasticlens') }}">Plastic Lens</a>
                                           
                             </div>
                         </div>
