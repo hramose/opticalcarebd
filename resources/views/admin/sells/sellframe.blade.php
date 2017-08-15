@@ -427,10 +427,8 @@ Sell Frame
         $('#btn_submit').click(function(event){
             if(document.getElementById("less").checked){
                 var  Less = "Less";         
-                console.log('Less');       
             }else{
-                var  Less = "";                         
-                console.log('not');
+                var  Less = "";                        
             }
             $.ajax({
                 type:'POST',
@@ -494,6 +492,8 @@ Sell Frame
                         if(data.errors.Status){
                             toastr.error(data.errors.Status,'Error Alert',{timeOut:8000});
                         }
+                    }else if(data.errorsR){
+                            toastr.error(data.errorsR,'Error Alert',{timeOut:8000});
                     }else{
                         swal("Good job!", "Frame Sell Successfully!", "success")
                     }
