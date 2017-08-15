@@ -329,10 +329,7 @@ Sell Frame
                                 <label ><span class="" id="lbl_Status"></span></label>
                         </div>
                         <div class="uk-width-medium-3-3">
-                        {{--  <input type="checkbox" data-switchery data-switchery-color="#1e88e5" id="switch_demo_primary less" value="Less" />
-                            <label for="switch_demo_primary" class="inline-label">Less <small>(Only if have)</small></label>  --}}
-
-                            <input type="checkbox" name="checkbox_demo_mercury" id="checkbox_demo_1 less"  />
+                            <input type="checkbox" class="less"  id="less"  data-md-icheck/>
                                         <label for="checkbox_demo_1" class="inline-label">Less <small>(Only if have)</small></label>
                           
                         </div>
@@ -426,9 +423,14 @@ Sell Frame
                 }
             }
     }
+
         $('#btn_submit').click(function(event){
-            if($('#less').is(':checked') == true){
-                console.log('Less');
+            if(document.getElementById("less").checked){
+                var  Less = "Less";         
+                console.log('Less');       
+            }else{
+                var  Less = "";                         
+                console.log('not');
             }
             $.ajax({
                 type:'POST',
@@ -455,7 +457,7 @@ Sell Frame
                     'Total': $('#txt_Total').val(), 
                     'Advance': $('#txt_Adv').val(), 
                     'Due': $('#lbl_Due').text(), 
-                    'Less': $('#less').val(),
+                    'Less': Less,
                     'Status': $('#lbl_Status').text(), 
                     'NoteAL': $('#txt_NAL').val(),
                     'NoteAC': $('#txt_NAC').val(),
