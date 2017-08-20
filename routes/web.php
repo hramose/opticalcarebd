@@ -31,7 +31,10 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::group(['prefix' => 'sells'], function(){
         Route::get('/','SellsController@index')->name('sells');
         Route::get('/api','SellsController@getSells');
+        Route::post('/paydue','SellsController@payDue');
         Route::delete('/delete','SellsController@deleteSells');
+        Route::get('/{id}/details', 'SellsController@sellDetails');
+        Route::get('/{id}/customercopy', 'SellsController@customerCopy');
 
         Route::get('/frame','SellsController@sellFrame')->name('sellFrame');
         Route::post('/frame','SellsController@newSellFrame');

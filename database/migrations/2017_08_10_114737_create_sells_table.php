@@ -37,6 +37,7 @@ class CreateSellsTable extends Migration
             $table->string('advance');
             $table->string('due');
             $table->string('due_payment')->nullable();
+            $table->date('due_payment_date')->nullable();            
             $table->string('status');
             $table->text('note_about_lens')->nullable();
             $table->text('note_about_customer')->nullable();

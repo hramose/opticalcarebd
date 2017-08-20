@@ -23,6 +23,44 @@ class SellsController extends Controller
         Sell::where('id',$requests->id)->delete();
         return 'Delete Done';
     }
+    public function sellDetails(Request $request,$id)
+    {
+        $sell = Sell::findOrFail($id);
+        return view('admin.sells.selldetails',compact('sell'));
+    }
+    public function customerCopy(Request $request,$id)
+    {
+        $sell = Sell::findOrFail($id);
+        return view('admin.sells.customercopy', compact('sell'));
+    }
+    public function payDue(Request $request)
+    {
+        $less  = $request->Less;
+        if ($less == "") {
+            $status = $request->Status;
+        } else {
+            $status  = $less;
+        }
+        $validator = Validator::make($request->all(),[
+            'Date' => 'required',
+            'PayDue' => 'required',
+            'Due' => 'required',
+            'Status' => 'required',
+        ]);
+        if ($validator->fails()) {
+            return Response::json(array('errors' =>
+            $validator->getMessageBag()->toArray()));
+        } else {
+               $sell = Sell::where('order_no',$request->order_no)->first();              
+                $sell->due = $request->Due;
+                $sell->due_payment = $request->PayDue;
+                $sell->due_payment_date = $request->Date;
+                $sell->status = $status;
+                $sell->save();
+                return response()->json($sell);            
+          
+        }
+    }
     public function sellFrame()
     {
         $categorys = Stock::where('product_type','frame')->orderBy('id','desc')->get();        
@@ -232,7 +270,7 @@ class SellsController extends Controller
         if ($less == "") {
             $status = $request->Status;
         } else {
-            $status  = $less;
+            $status  = $less;   
         }
         $validator = Validator::make($request->all(),[
             'order_no' => 'required|numeric|unique:sells',

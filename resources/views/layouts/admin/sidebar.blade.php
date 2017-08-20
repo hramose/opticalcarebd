@@ -3,7 +3,7 @@
 
         <div class="sidebar_main_header">
             <div class="sidebar_logo">
-                <a href="index.html" class="sSidebar_hide sidebar_logo_large">
+                <a href="{{ route('adminDashboard') }}" class="sSidebar_hide sidebar_logo_large">
                     <img class="logo_regular" src="{{ asset('admin/assets/img/logo_main.png') }}" alt="" height="15" width="145"/>
                     <img class="logo_light" src="{{ asset('admin/assets/img/logo_main_white.png') }}" alt="" height="15" width="145"/>
                 </a>
