@@ -27,7 +27,13 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::get('dashboard','AdminController@admin')->name('adminDashboard');
     Route::get('notes','NotesController@notes')->name('notes');
     Route::post('notes','NotesController@addNote');
-    
+
+    Route::group(['prefix' => 'expenses'], function(){
+        Route::get('/','ExpensesController@index')->name("expenses");
+        Route::post('add','ExpensesController@newExpenses')->name("addExpenses");
+        Route::get('details/{date}','ExpensesController@expensesDetails');
+        Route::delete('delete','ExpensesController@delete');
+    });
     Route::group(['prefix' => 'sells'], function(){
         Route::get('/','SellsController@index')->name('sells');
         Route::get('/api','SellsController@getSells');
