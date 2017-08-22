@@ -6,7 +6,8 @@ Dashboard
 @endsection
 
 @section('csslink')
-    
+    <link rel="stylesheet" href="{{ asset('admin/assets/css/sweetalert.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
 @endsection
 
 @section('content')
@@ -19,11 +20,42 @@ Dashboard
                     <div class="md-card">
                         <div class="md-card-content">
                             <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_visitors peity_data">5,3,9,6,5,9,7</span></div>
-                            <span class="uk-text-muted uk-text-small">Visitors (last 7d)</span>
-                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>12456</noscript></span></h2>
+                            <span class="uk-text-muted uk-text-small">Frame <span class="uk-badge uk-badge-notification">Category {{ $frameCategory }}</span></span>
+                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>{{ $frameQuantity->quantity }}</noscript></span></h2>
                         </div>
                     </div>
                 </div>
+
+                 <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_visitors peity_data">5,3,9,6,5,9,7</span></div>
+                            <span class="uk-text-muted uk-text-small">Sunglass <span class="uk-badge uk-badge-notification uk-badge-primary">Category {{ $sunglassCategory }}</span></span>
+                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>{{ $sunglassQuantity->quantity }}</noscript></span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                 <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_visitors peity_data">5,3,9,6,5,9,7</span></div>
+                            <span class="uk-text-muted uk-text-small">Contact Lens <span class="uk-badge uk-badge-notification uk-badge-success">Category {{ $contactLensCategory }}</span></span>
+                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>{{ $contactLensQuantity->quantity }}</noscript></span></h2>
+                        </div>
+                    </div>
+                </div>
+
+                 <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_visitors peity_data">5,3,9,6,5,9,7</span></div>
+                            <span class="uk-text-muted uk-text-small">Plastic Lens <span class="uk-badge uk-badge-notification uk-badge-success">Category {{ $plasticLensCategory }}</span></span>
+                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>{{ $plasticLensQuantity->quantity }}</noscript></span></h2>
+                        </div>
+                    </div>
+                </div>
+                
                 <div>
                     <div class="md-card">
                         <div class="md-card-content">
@@ -53,94 +85,32 @@ Dashboard
                 </div>
             </div>
 
-            <!-- large chart -->
-            <div class="uk-grid">
-                <div class="uk-width-1-1">
-                    <div class="md-card">
-                        <div class="md-card-toolbar">
-                            <div class="md-card-toolbar-actions">
-                                <i class="md-icon material-icons md-card-fullscreen-activate">&#xE5D0;</i>
-                                <i class="md-icon material-icons">&#xE5D5;</i>
-                                <div class="md-card-dropdown" data-uk-dropdown="{pos:'bottom-right'}">
-                                    <i class="md-icon material-icons">&#xE5D4;</i>
-                                    <div class="uk-dropdown uk-dropdown-small">
-                                        <ul class="uk-nav">
-                                            <li><a href="#">Action 1</a></li>
-                                            <li><a href="#">Action 2</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="md-card-toolbar-heading-text">
-                                Chart
-                            </h3>
-                        </div>
-                        <div class="md-card-content">
-                            <div class="mGraph-wrapper">
-                                <div id="mGraph_sale" class="mGraph" data-uk-check-display></div>
-                            </div>
-                            <div class="md-card-fullscreen-content">
-                                <div class="uk-overflow-container">
-                                    <table class="uk-table uk-table-no-border uk-text-nowrap">
-                                    <thead>
-                                        <tr>
-                                            <th>Date</th>
-                                            <th>Best Seller</th>
-                                            <th>Total Sale</th>
-                                            <th>Change</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>January 2014</td>
-                                            <td>Exercitationem et nihil id.</td>
-                                            <td>$3 234 162</td>
-                                            <td>0</td>
-                                        </tr>
-                                        <tr>
-                                            <td>February 2014</td>
-                                            <td>Explicabo accusantium sint neque.</td>
-                                            <td>$3 771 083</td>
-                                            <td class="uk-text-success">+2.5%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>March 2014</td>
-                                            <td>Eaque et qui repellat.</td>
-                                            <td>$2 429 352</td>
-                                            <td class="uk-text-danger">-4.6%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>April 2014</td>
-                                            <td>Necessitatibus eveniet dolorem.</td>
-                                            <td>$4 844 169</td>
-                                            <td class="uk-text-success">+7%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>May 2014</td>
-                                            <td>Iusto ut.</td>
-                                            <td>$5 284 318</td>
-                                            <td class="uk-text-success">+3.2%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>June 2014</td>
-                                            <td>Ut repellat accusantium et.</td>
-                                            <td>$4 688 183</td>
-                                            <td class="uk-text-danger">-6%</td>
-                                        </tr>
-                                        <tr>
-                                            <td>July 2014</td>
-                                            <td>Veniam perferendis illo.</td>
-                                            <td>$4 353 427</td>
-                                            <td class="uk-text-success">-5.3%</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                </div>
-                                <p class="uk-margin-large-top uk-margin-small-bottom heading_list uk-text-success">Some Info:</p>
-                                <p class="uk-margin-top-remove">Exercitationem adipisci qui quasi non ratione dolorum debitis minima nisi necessitatibus illo quaerat aut ea necessitatibus incidunt aliquid provident voluptas sequi exercitationem rem et consequuntur eum et voluptas voluptatum est quos rerum tempore corporis exercitationem adipisci enim est officia deleniti minima dicta sint aperiam animi enim vel dolores enim consequatur voluptatibus necessitatibus excepturi quam omnis ut corrupti ut temporibus deserunt nam dolores ipsa ut in rerum autem labore sunt odit repellendus blanditiis nihil voluptatibus animi mollitia.</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="md-card uk-margin-medium-bottom">
+                <div class="md-card-content">
+                    {{--  <div class="dt_colVis_buttons"></div>  --}}
+                    <table id="dt_tableExport" class="uk-table uk-text-nowrap uk-table-hover" cellspacing="0" width="100%">
+                        <thead>
+                        <tr>
+                            <th>Order NO</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                           <th>Due</th>
+                        </tr>
+                        </thead>
+                  
+                        <tfoot>
+                        <tr>
+                          <th>Order NO</th>
+                            <th>Name</th>
+                            <th>Phone</th>
+                            <th>Date</th>
+                            <th>Total</th>
+                           <th>Due</th>
+                            </tr>
+                        </tfoot>
+                    </table>
                 </div>
             </div>
 
@@ -345,7 +315,7 @@ Dashboard
                                 </div>
                             </div>
                             <div class="uk-text-center">
-                                <img class="md-card-head-avatar" src="assets/img/avatars/avatar_11.png" alt=""/>
+                                <img class="md-card-head-avatar" src="{{ asset('admin/assets/img/avatars/avatar_11.png') }}" alt=""/>
                             </div>
                             <h3 class="md-card-head-text uk-text-center md-color-white">
                                 Ariane Morissette                                <span><a class="__cf_email__" href="cdn-cgi/l/email-protection.html" data-cfemail="3d4d5458494f520e057d5a505c5451135e5250">[email&#160;protected]</a><script data-cfhash='f9e31' type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></span>
@@ -699,4 +669,59 @@ Dashboard
 
     <!--  dashbord functions -->
     <script src="{{ asset('admin/assets/js/pages/dashboard.min.js') }}"></script>
+    <!-- datatables -->
+    <script src="{{ asset('admin/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+    <!-- datatables buttons-->
+    <script src="{{ asset('admin/bower_components/datatables-buttons/js/dataTables.buttons.js') }}"></script>
+    <script src="{{ asset('admin/assets/js/custom/datatables/buttons.uikit.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/jszip/dist/jszip.min.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/pdfmake/build/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.colVis.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.html5.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.print.js') }}"></script>
+
+    <!-- datatables custom integration -->
+    <script src="{{ asset('admin/assets/js/custom/datatables/datatables.uikit.min.js') }}"></script>
+
+    <!--  datatables functions -->
+    <script src="{{ asset('admin/assets/js/pages/plugins_datatables.min.js')}}"></script>
+     <script src="{{ asset('admin/assets/js/sweetalert-dev.js') }}"></script>
+
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+      $(document).ready(function(){
+            $('#dt_tableExport thead th').each( function() {
+                var title =$(this).text();
+                $(this).html('<input type="text" class="md-input" placeholder=" '+title+'" />');
+            });
+      
+        var table = $('#dt_tableExport').DataTable({
+            "responsive":true,
+            "destroy": true,
+            "processing": true,
+            "serverSide": true,
+            "ajax":"dashboard/api",
+            "columns":[
+                {data:'order_no'},
+                {data:'customer_name'},
+                {data:'phone'},
+                {data:'sells_date'},
+                {data:'total'},
+                {data:'due'},
+            ]
+        });
+
+            table.columns().every( function() {
+                var that = this;
+                $('input', this.header()).on('keyup change', function(){
+                    if (that.search() !== this.value){
+                        that
+                              .search( this.value )
+                              .draw();
+                    }
+                });
+            });
+      });
+    </script>
 @endsection

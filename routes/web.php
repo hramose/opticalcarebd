@@ -25,6 +25,7 @@ Route::post('/logout', 'LoginController@logout')->name('logout');
 
 Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::get('dashboard','AdminController@admin')->name('adminDashboard');
+    Route::get('dashboard/api','AdminController@getDue');
     Route::get('notes','NotesController@notes')->name('notes');
     Route::post('notes','NotesController@addNote');
 

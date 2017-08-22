@@ -75,8 +75,8 @@
                     </a>
                     
                 </li>
-                <li title="Expenses">
-                    <a href="expenses">
+                <li title="Expenses" class="{{ (Request::is('admin/expenses')? 'current_section' : '') }}">
+                    <a href="{{ route('expenses') }}">
                         <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
                         <span class="menu_title">Expenses</span>
                     </a>
