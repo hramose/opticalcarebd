@@ -3,7 +3,7 @@
 @section('title')
 Expenses Details
 @endsection
- 
+
 @section('csslink')
     <link rel="stylesheet" href="{{ asset('admin/assets/css/sweetalert.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
@@ -17,68 +17,64 @@ Expenses Details
                        <div class="uk-width-medium-1-6">
                 <div class="uk-width-medium-1-3">
                             <a class="md-btn md-btn-primary md-btn-wave-light waves-effect waves-button waves-light" href="{{ route('expenses') }}"><-&nbsp;Back</a>
-                        <div class="uk-modal" id="modal_default">
-                                    <div class="uk-modal-dialog">
-                                      <div class="uk-modal-header">
-                                        <h3 class="uk-modal-title">New Expense</h3>
+                            <div class="uk-modal" id="model_edit">
+                                <div class="uk-modal-dialog">
+                                    <div class="uk-modal-header">
+                                        <h3 class="uk-modal-title">Edit Expense</h3>
                                     </div>
-                                    <form method="POST" id="formid" action="{{ route('addExpenses') }}">
-                                    {{ csrf_field() }}
-                                     {{ method_field('DELETE') }} 
+                                   <form id="form_validation" class="uk-form-stacked" method="POST">
+                                        {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
+                                    <input type="hidden" id="txtId">
+                                    <div class="uk-grid" data-uk-grid-margin>
+                                      <div class="uk-width-medium-1-1">
+                                        <div class="parsley-row uk-margin-top">
+                                            <label for="val_birth">Date:<span class="req"></span></label>
+                                            <input type="text"
+                                                        id="txtDate"
+                                                        value="2017-08-22"
+                                                        class="md-input sellsDate"
+                                                        data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (YYYY-MM-DD)" data-uk-datepicker="{format:'YYYY-MM-DD'}" />
+                                        </div>
+                                    </div>
+                                    </div>
+                                     <div class="uk-grid" data-uk-grid-margin>
                                         <div class="uk-width-medium-1-1">
-                                <div class="parsley-row uk-margin-top">
-                                    <label for="val_birth">Date:<span class="req"></span></label>
-                                    <input type="text" 
-                                                id="val_birth"  
-                                                name="date[]"
-                                                class="md-input sellsDate"  
-                                                data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (YYYY-MM-DD)" data-uk-datepicker="{format:'YYYY-MM-DD'}" />
+                                            <div class="parsley-row">
+                                                <label for="name">Expense Name<span class="req">*</span></label>
+                                                <input type="text"
+                                                           class="md-input label-fixed"
+                                                           id="txtName"
+                                                           required class="md-input" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-grid" id="addQuantity" data-uk-grid-margin>
+                                        <div class="uk-width-medium-1-1">
+                                            <div class="parsley-row">
+                                                <label for="amount">Amount<span class="req">*</span></label>
+                                                <input type="text"
+                                                          id="txtAmount"
+                                                          required
+                                                          class="md-input label-fixed" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="uk-modal-footer uk-text-right">
+                                        <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
+
+                                        <button type="button"
+                                                     id="btnEdit"
+                                                    class="md-btn md-btn-warning  uk-modal-close">Save change</button>
+                                    </div>
+
                                 </div>
                             </div>
-                                        <div data-dynamic-fields="field_template_modal"></div>
-                                 <script id="field_template_modal" type="text/x-handlebars-template">
-
-                                <div class="uk-grid uk-grid-medium form_section" data-uk-grid-match>
-                                
-                                    <div class="uk-width-9-10">
-                                        <div class="uk-grid">
-                                            <div class="uk-width-2-3">
-                                                <div class="parsley-row">
-                                                     <label for="d_form_address">Expenses Name</label>
-                                            <input type="text" class="md-input" name="expense_name[]" id="d_form_address">
-                                                </div>
-                                            </div>
-                                            <div class="uk-width-1-3">
-                                                <div class="parsley-row">
-                                                     <label for="d_form_address">Taka</label>
-                                            <input type="text" class="md-input" name="taka[]" id="d_form_address">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="uk-width-1-10 uk-text-center">
-                                        <div class="uk-vertical-align uk-height-1-1">
-                                            <div class="uk-vertical-align-middle">
-                                                <a href="#" class="btnSectionClone"><i class="material-icons md-36">&#xE146;</i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </script>
-                            <div class="uk-modal-footer uk-text-right">
-                                        <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
-                                        <button type="submit" 
-                                                     id="btnAddExpenses"
-                                                    class="md-btn md-btn-primary">Add Expense</button>
-                                         </div>
-                                         </form>
-                                    </div>
-                                </div>
                         </div>
              </div>
-               <br>      
+               <br>
             @if(session()->has('message'))
-                 <div class='uk-alert uk-alert-success' data-uk-alert><a href='#' class='uk-alert-close uk-close'></a>{{ session()->get('message') }}</div>       
+                 <div class='uk-alert uk-alert-success' data-uk-alert><a href='#' class='uk-alert-close uk-close'></a>{{ session()->get('message') }}</div>
             @endif
           <div class="md-card uk-margin-medium-bottom">
                 <div class="md-card-content">
@@ -86,25 +82,28 @@ Expenses Details
                     <table id="dt_tableExport" class="uk-table uk-text-nowrap uk-table-hover" cellspacing="0" width="100%">
                         <thead>
                         <tr>
-                            <th class="uk-text-center">Id</th>                        
+                            <th class="uk-text-center">Id</th>
                             <th class="uk-text-center">Date</th>
                             <th class="uk-text-center">Expenses Name</th>
                             <th class="uk-text-center">Amount</th>
                             <th class="uk-text-center">Action</th>
-                            
+
                         </tr>
                         </thead>
                         <tbody>
                             @foreach($expense as $expenses)
                                 <tr>
-                                    <td class="uk-text-center">{{ $expenses->id }}</td>              
+                                    <td class="uk-text-center">{{ $expenses->id }}</td>
                                     <td class="uk-text-center">{{ $expenses->date }}</td>
                                     <td class="uk-text-center">{{ $expenses->expenses_name }}</td>
                                     <td class="uk-text-center">{{ $expenses->amount }}</td>
                                     <td class="uk-text-center">
-                                        <a id="updateQuantityModel" data-uk-modal="{target:'#model_frame'}">
-                                            <i class="md-icon material-icons md-36 uk-text-primary" data-id="' + row.id + '">&#xE254;</i>
-                                        </a> 
+                                        <a id="editModel" data-uk-modal="{target:'#model_edit'}">
+                                            <i class="md-icon material-icons md-36 uk-text-primary" data-id="{{ $expenses->id }}">&#xE254;</i>
+                                            <input type="hidden" id="editDate" value="{{ $expenses->date }}">
+                                            <input type="hidden" id="editName" value="{{ $expenses->expenses_name }}">
+                                            <input type="hidden" id="editAmount" value="{{ $expenses->amount }}">
+                                        </a>
                                         <a id="deleteFrame"><i class="md-icon material-icons md-36 uk-text-danger" data-id="{{ $expenses->id }}">&#xE92B;</i></a>'
                                     </td>
                                 </tr>
@@ -113,11 +112,11 @@ Expenses Details
 
                         <tfoot>
                         <tr>
-                          <th class="uk-text-center">Id</th>                        
+                          <th class="uk-text-center">Id</th>
                             <th class="uk-text-center">Date</th>
                             <th class="uk-text-center">Expenses Name</th>
                             <th class="uk-text-center">Amount</th>
-                            <th class="uk-text-center">Action</th>                             
+                            <th class="uk-text-center">Action</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -140,7 +139,7 @@ Expenses Details
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.colVis.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.html5.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.print.js') }}"></script>
-    
+
     <!-- datatables custom integration -->
     <script src="{{ asset('admin/assets/js/custom/datatables/datatables.uikit.min.js') }}"></script>
 
@@ -170,6 +169,45 @@ Expenses Details
               $(document).on('click','.btnSectionRemove', function(event){
                   $('#date').remove();
             });
+            $(document).on('click', '#editModel', function(event){
+               var id = $(this).find( "i" ).attr( "data-id" );
+               var date = $(this).find('#editDate').val();
+               var name = $(this).find('#editName').val();
+               var amount = $(this).find('#editAmount').val();
+               $('#txtId').val(id);
+               $("#txtDate").val(date);
+               $('#txtName').val(name);
+               $('#txtAmount').val(amount);
+           });
+        $(document).on('click','#btnEdit', function(event){
+             $.ajax({
+                 type:'POST',
+                 url:'/admin/expenses/edit',
+                 data:{
+                     '_token':$('input[name=_token]').val(),
+                     'id':$('#txtId').val(),
+                     'date':$('#txtDate').val(),
+                     'expenses_name':$('#txtName').val(),
+                     'amount':$('#txtAmount').val(),
+                 },
+                 success:function(data){
+                     if((data.errors)){
+                         if(data.errors.date){
+                             toastr.error(data.errors.date,'Error Alert',{timOut:8000});
+                         }
+                          if(data.errors.expenses_name){
+                             toastr.error(data.errors.expenses_name,'Error Alert',{timOut:8000});
+                         }
+                          if(data.errors.amount){
+                             toastr.error(data.errors.amount,'Error Alert',{timOut:8000});
+                         }
+                     }else{
+                         swal("Good job!", "Expense Successfully Updated!", "success")
+                         setTimeout(function () { location.reload(); }, 1000);
+                     }
+                 }
+             });
+        });
         $(document).on('click', '#deleteFrame', function(event){
         var id = $(this).find( "i" ).attr( "data-id" );
         swal({
@@ -185,7 +223,7 @@ Expenses Details
                 },
                 function(isConfirm){
                 if (isConfirm) {
-                     $.post('/admin/expenses/delete', {'id': id, '_token':$('input[name=_token]').val(),'_method':$('input[name=_method]').val()}, function(data){               
+                     $.post('/admin/expenses/delete', {'id': id, '_token':$('input[name=_token]').val(),'_method':$('input[name=_method]').val()}, function(data){
                     });
                     swal("Deleted!", "Your data has been deleted.", "success");
                    setTimeout(function () { location.reload(); }, 1000);
@@ -196,6 +234,3 @@ Expenses Details
         });
         </script>
 @endsection
-
-
-

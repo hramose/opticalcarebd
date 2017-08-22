@@ -24,15 +24,15 @@ Stock Frame
                                     </div>
                                    <form id="form_validation" class="uk-form-stacked" method="POST">
                                         {{ csrf_field() }}
-                                    {{ method_field('DELETE') }} 
+                                    {{ method_field('DELETE') }}
                                     <input type="hidden" id="frameId">
                                     <div class="uk-grid" data-uk-grid-margin>
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label for="category">Category/Name<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           class="md-input label-fixed"
-                                                          name="category" 
+                                                          name="category"
                                                           id="txtCategory"
                                                           required class="md-input" />
                                             </div>
@@ -42,8 +42,8 @@ Stock Frame
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label for="quantity">Quantity<span class="req">*</span></label>
-                                                <input type="text" 
-                                                          class="md-input label-fixed"                                     name="quantity" 
+                                                <input type="text"
+                                                          class="md-input label-fixed"                                     name="quantity"
                                                           id="txtQuantity"
                                                           required class="md-input" />
                                             </div>
@@ -53,8 +53,8 @@ Stock Frame
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label for="newQuantity">Add Quantity<span class="req">*</span></label>
-                                                <input type="text" 
-                                                          name="newQuantity" 
+                                                <input type="text"
+                                                          name="newQuantity"
                                                           id="txtNewQuantity"
                                                           required class="md-input" />
                                             </div>
@@ -62,22 +62,22 @@ Stock Frame
                                     </div>
                                     <div class="uk-modal-footer uk-text-right">
                                         <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
-                                        <button type="button" 
-                                                     id="btnAddFrame"
+                                        <button type="button"
+                                                     id="btnAddFrame"Edit
                                                     class="md-btn md-btn-primary uk-modal-close">Add Frame</button>
-                                        <button type="button" 
+                                        <button type="button"
                                                      id="btnUpdateQuantity"
                                                     class="md-btn md-btn-success  uk-modal-close">Update Quantity</button>
-                                        <button type="button" 
+                                        <button type="button"
                                                      id="btnEdit"
                                                     class="md-btn md-btn-warning  uk-modal-close">Edit</button>
                                     </div>
-                                 
+
                                 </div>
                             </div>
                         </div>
              </div>
-               <br>      
+               <br>
 
           <div class="md-card uk-margin-medium-bottom">
                 <div class="md-card-content">
@@ -101,7 +101,7 @@ Stock Frame
                             <th>Quantity</th>
                             <th>Created at</th>
                             <th>Updated at</th>
-                            <th>Action</th>                            
+                            <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -124,7 +124,7 @@ Stock Frame
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.colVis.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.html5.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.print.js') }}"></script>
-    
+
     <!-- datatables custom integration -->
     <script src="{{ asset('admin/assets/js/custom/datatables/datatables.uikit.min.js') }}"></script>
 
@@ -197,7 +197,7 @@ Stock Frame
             $('#btnEdit').hide();
         });
          $(document).on('click', '#editModel', function(event){
-            var id = $(this).find( "i" ).attr( "data-id" ); 
+            var id = $(this).find( "i" ).attr( "data-id" );
             var category = $(this).find('#editFrameCategory').val();
             var quantity = $(this).find('#editFrameQuantity').val();
             $('#frameId').val(id);
@@ -205,7 +205,7 @@ Stock Frame
             $('#txtQuantity').val(quantity);
             $('.uk-modal-title').text('Edit Frame Info');
             $("#txtCategory").prop('disabled', false);
-            $("#txtQuantity").prop('disabled', false);                    
+            $("#txtQuantity").prop('disabled', false);
             $('#btnEdit').show();
             $('#btnAddFrame').hide(0);
             $('#btnUpdateQuantity').hide(0);
@@ -237,7 +237,7 @@ Stock Frame
         });
         $(document).on('click','#btnUpdateQuantity', function(event){
             var id = $( "#frameId" ).val();
-           
+
             $.ajax({
                 type:'POST',
                 url:'frame/update',
@@ -259,7 +259,7 @@ Stock Frame
             });
         });
          $(document).on('click','#btnEdit', function(event){
-            var id = $( "#frameId" ).val();             
+            var id = $( "#frameId" ).val();
             $.ajax({
                 type: 'POST',
                 url: 'frame/edit',
@@ -300,7 +300,7 @@ Stock Frame
                 function(isConfirm){
                 if (isConfirm) {
                      $.post('frame/delete', {'id': id, '_token':$('input[name=_token]').val(),'_method':$('input[name=_method]').val()}, function(data){
-                        table.ajax.reload( null, false );                    
+                        table.ajax.reload( null, false );
                     });
                     swal("Deleted!", "Your data has been deleted.", "success");
                 } else {
@@ -311,6 +311,3 @@ Stock Frame
     });
     </script>
 @endsection
-
-
-

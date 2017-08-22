@@ -15,7 +15,7 @@ Route::get('/','HomeController@home')->name('home');
 Route::group(['middleware' => 'visitors'], function(){
     Route::get('register','RegistrationController@register')->name('register');
     Route::post('register','RegistrationController@createUser')->name('doRegister');
-    
+
     Route::get('login','LoginController@login')->name('login');
     Route::post('login','LoginController@doLogin')->name('doLogin');
 });
@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
         Route::post('add','ExpensesController@newExpenses')->name("addExpenses");
         Route::get('details/{date}','ExpensesController@expensesDetails');
         Route::delete('delete','ExpensesController@delete');
+        Route::post('edit','ExpensesController@edit');
     });
     Route::group(['prefix' => 'sells'], function(){
         Route::get('/','SellsController@index')->name('sells');
@@ -57,7 +58,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     });
 
     Route::group(['prefix' => 'stock'], function(){
-     
+
         Route::group(['prefix' => 'frame'], function(){
             Route::get('/','Stock\FrameController@frame')->name('frame');
             Route::get('/api','Stock\FrameController@getFrame');
@@ -66,10 +67,10 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
             Route::post('/edit','Stock\FrameController@editFrame');
             Route::delete('/delete','Stock\FrameController@deleteFrame');
         });
-        
+
             Route::group(['prefix' => 'sunglass'], function(){
                 Route::get('/','Stock\SunglassController@sunglass')->name('sunglass');
-                Route::get('/api','Stock\SunglassController@getSunglass');      
+                Route::get('/api','Stock\SunglassController@getSunglass');
                 Route::post('/','Stock\SunglassController@addSunglass');
                 Route::post('/update','Stock\SunglassController@updateSunglass');
                 Route::post('/edit','Stock\SunglassController@editSunglass');
@@ -78,7 +79,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
 
             Route::group(['prefix' => 'contactlens'], function(){
                 Route::get('/','Stock\ContactlensController@contactlens')->name('contactlens');
-                Route::get('/api','Stock\ContactlensController@getContactlens');      
+                Route::get('/api','Stock\ContactlensController@getContactlens');
                 Route::post('/','Stock\ContactlensController@addContactlens');
                 Route::post('/update','Stock\ContactlensController@updateContactlens');
                 Route::post('/edit','Stock\ContactlensController@editContactlens');
@@ -87,7 +88,7 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
 
             Route::group(['prefix' => 'plasticlens'], function(){
                 Route::get('/','Stock\PlasticlensController@plasticlens')->name('plasticlens');
-                Route::get('/api','Stock\PlasticlensController@getPlasticlens');      
+                Route::get('/api','Stock\PlasticlensController@getPlasticlens');
                 Route::post('/','Stock\PlasticlensController@addPlasticlens');
                 Route::post('/update','Stock\PlasticlensController@updatePlasticlens');
                 Route::post('/edit','Stock\PlasticlensController@editPlasticlens');

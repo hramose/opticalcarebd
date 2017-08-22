@@ -3,7 +3,7 @@
 @section('title')
 Stock Frame
 @endsection
- 
+
 @section('csslink')
     <link rel="stylesheet" href="{{ asset('admin/assets/css/sweetalert.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
@@ -24,22 +24,22 @@ Stock Frame
                                     </div>
                                     <form method="POST" id="formid" action="{{ route('addExpenses') }}">
                                     {{ csrf_field() }}
-                                    
+
                                         <div class="uk-width-medium-1-1">
-                                <div class="parsley-row uk-margin-top">
-                                    <label for="val_birth">Date:<span class="req"></span></label>
-                                    <input type="text" 
-                                                id="val_birth"  
-                                                name="date[]"
-                                                class="md-input sellsDate"  
-                                                data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (YYYY-MM-DD)" data-uk-datepicker="{format:'YYYY-MM-DD'}" />
-                                </div>
-                            </div>
+                                          <div class="parsley-row uk-margin-top">
+                                              <label for="val_birth">Date:<span class="req"></span></label>
+                                              <input type="text"
+                                                          id="val_birth"
+                                                          name="date[]"
+                                                          class="md-input sellsDate"
+                                                          data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (YYYY-MM-DD)" data-uk-datepicker="{format:'YYYY-MM-DD'}" />
+                                          </div>
+                                      </div>
                                         <div data-dynamic-fields="field_template_modal"></div>
                                  <script id="field_template_modal" type="text/x-handlebars-template">
 
                                 <div class="uk-grid uk-grid-medium form_section" data-uk-grid-match>
-                                
+
                                     <div class="uk-width-9-10">
                                         <div class="uk-grid">
                                             <div class="uk-width-2-3">
@@ -67,7 +67,7 @@ Stock Frame
                             </script>
                             <div class="uk-modal-footer uk-text-right">
                                         <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
-                                        <button type="submit" 
+                                        <button type="submit"
                                                      id="btnAddExpenses"
                                                     class="md-btn md-btn-primary">Add Expense</button>
                                          </div>
@@ -76,9 +76,9 @@ Stock Frame
                                 </div>
                         </div>
              </div>
-               <br>      
+               <br>
             @if(session()->has('message'))
-                 <div class='uk-alert uk-alert-success' data-uk-alert><a href='#' class='uk-alert-close uk-close'></a>{{ session()->get('message') }}</div>       
+                 <div class='uk-alert uk-alert-success' data-uk-alert><a href='#' class='uk-alert-close uk-close'></a>{{ session()->get('message') }}</div>
             @endif
           <div class="md-card uk-margin-medium-bottom">
                 <div class="md-card-content">
@@ -89,7 +89,7 @@ Stock Frame
                             <th class="uk-text-center">Date</th>
                             <th class="uk-text-center">Total</th>
                             <th class="uk-text-center">Action</th>
-                            
+
                         </tr>
                         </thead>
                         <tbody>
@@ -106,7 +106,7 @@ Stock Frame
                         <tr>
                             <th class="uk-text-center">Date</th>
                             <th class="uk-text-center">Total</th>
-                            <th class="uk-text-center">Action</th>                                     
+                            <th class="uk-text-center">Action</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -129,7 +129,7 @@ Stock Frame
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.colVis.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.html5.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.print.js') }}"></script>
-    
+
     <!-- datatables custom integration -->
     <script src="{{ asset('admin/assets/js/custom/datatables/datatables.uikit.min.js') }}"></script>
 
@@ -162,6 +162,3 @@ Stock Frame
 
         </script>
 @endsection
-
-
-

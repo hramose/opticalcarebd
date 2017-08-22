@@ -18,9 +18,9 @@ Notes
                     <div class="uk-width-large-3-10 hidden-print uk-visible-large">
                         <div class="md-list-outside-wrapper" id="notes">
                             <ul class="md-list md-list-outside notes_list" id="notes_list">
-            
+
                                 <li class="heading_list uk-text-danger">Important Notes</li>
-                                
+
                                 @foreach ($notes as $note)
                                      <li>
                                     <a href="#" class="md-list-content note_link">
@@ -30,8 +30,8 @@ Notes
                                     </a>
                                 </l>
                                 @endforeach
-                                
-                                                                                     
+
+
                             </ul>
                         </div>
                     </div>
@@ -39,7 +39,7 @@ Notes
                         <div class="md-card md-card-single">
                             <form >
                              {{ csrf_field() }}
-                             {{ method_field('DELETE') }} 
+                             {{ method_field('DELETE') }}
                                 <div class="md-card-toolbar hidden-print">
                                     <div class="md-card-toolbar-actions">
                                         <i id="addNote" class="md-icon material-icons">&#xE161;</i>
@@ -73,7 +73,7 @@ Notes
         <a class="md-fab md-fab-danger" href="#" id="note_add">
             <i class="material-icons">&#xE145;</i>
         </a>
-    </div>  
+    </div>
                     <div class="uk-grid" style="display:none;" data-uk-grid-margin>
                         <div class="uk-width-medium-1-4">
                             <button class="md-btn" data-message="<a href='#' class='notify-action'>Remove</a> Info" data-status="info" data-pos="bottom-center">Info</button>
@@ -110,6 +110,3 @@ Notes
         });
     </script>
 @endsection
-
-
-
