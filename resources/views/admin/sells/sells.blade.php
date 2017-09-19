@@ -27,25 +27,24 @@ Sells
                             </div>
                             <p>What do you want to sell? </p>
                             <div class="uk-modal-footer uk-text-right">
-                                    <button type="button" 
+                                    <button type="button"
                                         class="md-btn md-btn-small md-btn-flat uk-modal-close">Close</button>
-                                        <a class="md-btn md-btn-small md-btn-primary" 
+                                        <a class="md-btn md-btn-small md-btn-primary"
                                              href="{{ route('sellFrame') }}">Frame</a>
-                                        <a class="md-btn md-btn-small md-btn-primary" 
+                                        <a class="md-btn md-btn-small md-btn-primary"
                                              href="{{ route('sellSunglass') }}">Sunglass</a>
                                         <a class="md-btn md-btn-small md-btn-primary"
                                              href="{{ route('sellContactlens') }}">Contact Lens</a>
-                                        <a class="md-btn md-btn-small md-btn-primary" 
+                                        <a class="md-btn md-btn-small md-btn-primary"
                                              href="{{ route('sellPlasticlens') }}">Plastic Lens</a>
-                                          console.log
                             </div>
                         </div>
-                    </div> 
-               <br>   
-                   
+                    </div>
+               <br>
+
                 <form class="uk-form-stacked" method="POST">
                         {{ csrf_field() }}
-                        {{ method_field('DELETE') }} 
+                        {{ method_field('DELETE') }}
                         <input type="hidden" id="sellsId">
                         <input type="hidden" id="mOrderNo">
                         <input type="hidden" id="mCustomerName">
@@ -61,23 +60,23 @@ Sells
                             <p>What? you like to do with this data. </p>
                             <div class="uk-modal-footer uk-text-right">
                                 <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
-                                        <button type="button" 
+                                        <button type="button"
                                                     id="linkPayDue"
                                                     data-uk-modal="{target:'#model_paydue'}"
                                                     class="md-btn md-btn-primary uk-modal-close">Pay Due</button>
-                                                    
+
                                         <a  id="linkDetails"
-                                                    target="_blank" 
+                                                    target="_blank"
                                                     class="md-btn md-btn-success">Details</a>
                                         <a  id="linkCustomerCopy"
                                                     target="_blank"
                                                     class="md-btn md-btn-warning">Customer Copy</a>
-                                       <button type="button" 
+                                       <button type="button"
                                                      id="btnDelete"
                                                     class="md-btn md-btn-danger  uk-modal-close">Delete</button>
                             </div>
                         </div>
-                    </div>   
+                    </div>
                                  <div class="uk-width-medium-1-6">
                 <div class="uk-width-medium-1-3">
                             <div class="uk-modal" id="model_paydue">
@@ -87,14 +86,14 @@ Sells
                                     </div>
                                    <form id="form_validation" class="uk-form-stacked" method="POST">
                                         {{ csrf_field() }}
-                                    {{ method_field('DELETE') }} 
+                                    {{ method_field('DELETE') }}
                                     <div class="uk-grid" data-uk-grid-margin>
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label for="category">Order No<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           class="md-input label-fixed"
-                                                          name="category" 
+                                                          name="category"
                                                           id="txtOrderNo"
                                                           required class="md-input" />
                                             </div>
@@ -104,8 +103,8 @@ Sells
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label>Customer Name<span class="req">*</span></label>
-                                                <input type="text" 
-                                                        class="md-input label-fixed"                 
+                                                <input type="text"
+                                                        class="md-input label-fixed"
                                                           id="txtCustomerName"
                                                           required class="md-input" />
                                             </div>
@@ -115,9 +114,9 @@ Sells
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label>Sell Date<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           id="txtSellDate"
-                                                           class="md-input label-fixed"       
+                                                           class="md-input label-fixed"
                                                           required class="md-input" />
                                             </div>
                                         </div>
@@ -126,9 +125,9 @@ Sells
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label>Total<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           id="txtTotal"
-                                                           class="md-input label-fixed"       
+                                                           class="md-input label-fixed"
                                                           required class="md-input" />
                                             </div>
                                         </div>
@@ -137,9 +136,9 @@ Sells
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label>Advance<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           id="txtAdvance"
-                                                           class="md-input label-fixed"       
+                                                           class="md-input label-fixed"
                                                           required class="md-input" />
                                             </div>
                                         </div>
@@ -148,10 +147,10 @@ Sells
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label>Due<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           id="txtDue"
                                                             onkeyup="sum();"
-                                                           class="md-input label-fixed"       
+                                                           class="md-input label-fixed"
                                                           required class="md-input" />
                                             </div>
                                         </div>
@@ -160,10 +159,10 @@ Sells
                                         <div class="uk-width-medium-1-1">
                                             <div class="parsley-row">
                                                 <label>Pay Due<span class="req">*</span></label>
-                                                <input type="text" 
+                                                <input type="text"
                                                           id="txtPayDue"
                                                             onkeyup="sum();"
-                                                           class="md-input label-fixed"       
+                                                           class="md-input label-fixed"
                                                           required class="md-input" />
                                             </div>
                                         </div>
@@ -172,9 +171,9 @@ Sells
                             <div class="uk-width-medium-1-1">
                                 <div class="parsley-row">
                                     <label for="val_birth">Date:<span class="req"></span></label>
-                                    <input type="text" 
-                                                id="val_birth"  
-                                                class="md-input dueDate"  
+                                    <input type="text"
+                                                id="val_birth"
+                                                class="md-input dueDate"
                                                 data-parsley-americandate data-parsley-americandate-message="This value should be a valid date (YYYY-MM-DD)" data-uk-datepicker="{format:'YYYY-MM-DD'}" />
                                 </div>
                             </div>
@@ -195,7 +194,7 @@ Sells
                                     </div>
                                     </div>
 
-                                     <div class="uk-grid" data-uk-grid-margin>                                   
+                                     <div class="uk-grid" data-uk-grid-margin>
                                          <div class="uk-width-medium-1-1">
                                          <input type="checkbox" class="less"  id="less"  data-md-icheck/>
                                         <label for="checkbox_demo_1" class="inline-label">Less <small>(Only if have)</small></label>
@@ -203,11 +202,11 @@ Sells
                                   </div>
                                     <div class="uk-modal-footer uk-text-right">
                                         <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
-                                        <button type="button" 
+                                        <button type="button"
                                                      id="btnPayDue"
                                                     class="md-btn md-btn-success  uk-modal-close">Pay Due</button>
                                     </div>
-                                 
+
                                 </div>
                             </div>
                         </div>
@@ -230,7 +229,7 @@ Sells
                             <th>Total</th>
                             <th>Adv</th>
                             <th>Due</th>
-                            <th>Status</th>     
+                            <th>Status</th>
                            <th>Action</th>
                         </tr>
                         </thead>
@@ -247,8 +246,8 @@ Sells
                             <th>Total</th>
                             <th>Adv</th>
                             <th>Due</th>
-                            <th>Status</th>     
-                            <th>Action</th>                            
+                            <th>Status</th>
+                            <th>Action</th>
                             </tr>
                         </tfoot>
                     </table>
@@ -271,7 +270,7 @@ Sells
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.colVis.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.html5.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables-buttons/js/buttons.print.js') }}"></script>
-    
+
     <!-- datatables custom integration -->
     <script src="{{ asset('admin/assets/js/custom/datatables/datatables.uikit.min.js') }}"></script>
 
@@ -283,7 +282,7 @@ Sells
 
     <script>
         function sum(){
-        
+
             var due = document.getElementById('txtDue').value;
             var paydue = document.getElementById('txtPayDue').value;
             var result = parseInt(due) - parseInt(paydue);
@@ -293,19 +292,19 @@ Sells
                     $('#lbl_Status').text('Due');
                     $("#lbl_Status").attr('class', 'uk-badge  uk-badge-warning');
                 }else if(parseInt(paydue) == parseInt(due)){
-                    $('#lbl_Status').text('Paid');        
-                    $("#lbl_Status").attr('class', 'uk-badge  uk-badge-success');   
+                    $('#lbl_Status').text('Paid');
+                    $("#lbl_Status").attr('class', 'uk-badge  uk-badge-success');
                 }else{
-                    $('#lbl_Status').text('Error');  
+                    $('#lbl_Status').text('Error');
                     $("#lbl_Status").attr('class', 'uk-badge  uk-badge-danger');
                 }
             }
     }
      $('#btnPayDue').click(function(event){
             if(document.getElementById("less").checked){
-                var  Less = "Less";         
+                var  Less = "Less";
             }else{
-                var  Less = "";                        
+                var  Less = "";
             }
             $.ajax({
                 type:'POST',
@@ -313,11 +312,11 @@ Sells
                 data:{
                     '_token': $('input[name=_token]').val(),
                     'order_no': $('#txtOrderNo').val(),
-                    'Due': $('#lbl_RDue').text(), 
+                    'Due': $('#lbl_RDue').text(),
                     'PayDue': $('#txtPayDue').val(),
                     'Date': $('.dueDate').val(),
                     'Less': Less,
-                    'Status': $('#lbl_Status').text(), 
+                    'Status': $('#lbl_Status').text(),
                 },
                 success:function(data){
                     if((data.errors)) {
@@ -380,7 +379,7 @@ Sells
             });
         $(document).on('click', '#optionsModal', function(event){
             var id = $(this).find( "i" ).attr( "data-id" );
-            var orderNo = $(this).find('#optOrderNo').val();  
+            var orderNo = $(this).find('#optOrderNo').val();
             var customerName = $(this).find('#optCustomerName').val();
             var sellsDate = $(this).find('#optSellsDate').val();
             var total = $(this).find('#optTotal').val();
@@ -408,7 +407,7 @@ Sells
             $('#txtAdvance').prop('disabled', true);
             $('#txtDue').prop('disabled', true);
             var id = $('#sellsId').val();
-            var orderNo = $('#mOrderNo').val();  
+            var orderNo = $('#mOrderNo').val();
             var customerName = $('#mCustomerName').val();
             var sellsDate = $('#mSellsDate').val();
             var total = $('#mTotal').val();
@@ -440,7 +439,7 @@ Sells
                 function(isConfirm){
                 if (isConfirm) {
                      $.post('sells/delete', {'id': id, '_token':$('input[name=_token]').val(),'_method':$('input[name=_method]').val()}, function(data){
-                        table.ajax.reload( null, false );                    
+                        table.ajax.reload( null, false );
                     });
                     swal("Deleted!", "Your data has been deleted.", "success");
                 } else {
@@ -451,6 +450,3 @@ Sells
     });
     </script>
 @endsection
-
-
-

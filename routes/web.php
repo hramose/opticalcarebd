@@ -29,6 +29,19 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::get('notes','NotesController@notes')->name('notes');
     Route::post('notes','NotesController@addNote');
 
+    Route::group(['prefix' => 'sms'], function () {
+      Route::get('/','SmsController@index');
+      Route::get('due/{id}','SmsController@dueSms');
+
+    });
+
+    Route::group(['prefix' => 'daycloseup'], function(){
+      Route::get('/','DaycloseupController@index');
+      Route::get('/api','DaycloseupController@getData');
+    Route::post('/add','DaycloseupController@addData');
+      Route::delete('/delete','DaycloseupController@delete');
+    });
+
     Route::group(['prefix' => 'expenses'], function(){
         Route::get('/','ExpensesController@index')->name("expenses");
         Route::post('add','ExpensesController@newExpenses')->name("addExpenses");

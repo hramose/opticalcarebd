@@ -68,19 +68,24 @@
                         </li>
                     </ul>
                 </l>
-                <li title="Sell" class="{{ (Request::is('admin/sells')? 'current_section' : '') }}">
+                <li title="Sell"
+                     class="{{ (Request::is('admin/sells')? 'current_section' : '') }}
+                                {{ (Request::is('admin/sells/frame')? 'current_section' : '') }}
+                                {{ (Request::is('admin/sells/sunglass')? 'current_section' : '') }}
+                                {{ (Request::is('admin/sells/contactlens')? 'current_section' : '') }}
+                                {{ (Request::is('admin/sells/plasticlens')? 'current_section' : '') }}">
                     <a href="{{ route('sells') }}">
                         <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
                         <span class="menu_title">Sell</span>
                     </a>
-                    
+
                 </li>
                 <li title="Expenses" class="{{ (Request::is('admin/expenses')? 'current_section' : '') }}">
                     <a href="{{ route('expenses') }}">
                         <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
                         <span class="menu_title">Expenses</span>
                     </a>
-                    
+
                 </li>
                  <li title="Notes">
                     <a href="{{ route('notes') }}">
@@ -99,7 +104,7 @@
                  <div class="uk-text-center">
                 <iframe src="http://free.timeanddate.com/clock/i5gfj8y5/n73/szw160/szh160/hoc000/hbw0/hfc09f/cf100/hnc07c/hwc000/hcw2/facfff/fdi76/mqcfff/mqs4/mql18/mqw4/mqd60/mhcfff/mhs4/mhl5/mhw4/mhd62/mmv0/hhcfff/hhs1/hhb10/hmcfff/hms1/hmb10/hscfff/hsw3" frameborder="0" width="160" height="160"></iframe>
 
-                    
+
                 </div>
             </ul>
         </div>
