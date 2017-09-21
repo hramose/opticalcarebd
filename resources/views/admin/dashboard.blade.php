@@ -125,7 +125,7 @@ Dashboard
                                        </div>
                                        <h3 class="md-card-toolbar-heading-text">
 
-                                          TODAY DELIVERY<span class="uk-badge uk-badge-notification"></span>
+                                          TODAY DELIVERY<span class="uk-badge uk-badge-notification">{{ $TdeliverysCount }}</span>
                                        </h3>
                                    </div>
 
@@ -155,7 +155,7 @@ Dashboard
                                                     Due: {{$delivery->due}}
                                                 </span>
                                                 <span class="">
-                                                <a class="md-btn md-btn-primary md-btn-mini md-btn-wave-light md-btn-icon waves-effect waves-button waves-light" href="sms-today-delivery-single?ID=['ID'];?>">Send SMS</a>
+                                                <a class="md-btn md-btn-primary md-btn-mini md-btn-wave-light md-btn-icon waves-effect waves-button waves-light" href='/admin/sms/delivery/{{ $delivery->id }}'>Send SMS</a>
 
                                                 </span>
 

@@ -93,6 +93,12 @@
                         <span class="menu_title">Notes</span>
                     </a>
                 </li>
+                <li title="SMS" class="{{ Request::is('admin/sms') ? 'current_section' : '' }}">
+                    <a href="{{ route('sms') }}">
+                        <span class="menu_icon"><i class="material-icons">&#xE158;</i></span>
+                        <span class="menu_title">SMS</span>
+                    </a>
+                </li>
                 <!--
                 <li title="User Profile">
                     <a href="stock-contact_lens">

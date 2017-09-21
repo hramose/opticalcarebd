@@ -28,8 +28,9 @@ class AdminController extends Controller
 
         //Today DELIVERY
         $Tdeliverys = Sell::where('delivery_date',DB::raw('curdate()'))->get();
+        $TdeliverysCount = Sell::where('delivery_date',DB::raw('curdate()'))->count();
 
-       return view('admin.dashboard',compact('frameCategory','frameQuantity','sunglassCategory','sunglassQuantity','contactLensCategory','contactLensQuantity','plasticLensCategory','plasticLensQuantity','due','Tdeliverys'));
+       return view('admin.dashboard',compact('frameCategory','frameQuantity','sunglassCategory','sunglassQuantity','contactLensCategory','contactLensQuantity','plasticLensCategory','plasticLensQuantity','due','Tdeliverys','TdeliverysCount'));
 // dd($delivery);
    }
    public function getDue()

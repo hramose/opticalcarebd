@@ -92,6 +92,8 @@
                                         </div>
 
                                         <h2 class="uk-text-success text-success">SMS Sent Successfully :)</h2>
+                                        <h3 class="uk-text-success text-success">TO</h3>
+                                        <h4 class="uk-text-success text-success">{{ $sendto }}</h4>                                        
                                     </div>
 
                                 </div>
@@ -101,7 +103,7 @@
 
                             <div class="row m-t-30">
                                 <div class="col-sm-12 text-center">
-                                    <p class="text-muted">Return <a href="{{ URL::previous() }}" class="text-primary m-l-5"><b>BACK</b></a></p>
+                                    <p class="text-muted">Return <a href="{{ URL::previous() }}" class="btn btn-primary"><b>BACK</b></a></p>
                                 </div>
                             </div>
 

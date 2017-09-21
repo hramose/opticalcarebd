@@ -30,8 +30,14 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::post('notes','NotesController@addNote');
 
     Route::group(['prefix' => 'sms'], function () {
-      Route::get('/','SmsController@index');
+      Route::get('/','SmsController@index')->name('sms');
+      Route::post('update','SmsController@updateMessage');
+      Route::post('send','SmsController@send')->name('sendSMS');
+      Route::get('all','SmsController@allSMS')->name('allSMS');
       Route::get('due/{id}','SmsController@dueSms');
+      Route::get('all/due','SmsController@dueAllSms')->name('allDueSMS');
+      Route::get('delivery/{id}','SmsController@deliverySms');
+      Route::get('all/delivery','SmsController@deliveryAllSms')->name('allDeliverySMS');
 
     });
 
