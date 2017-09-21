@@ -87,7 +87,7 @@
                     </a>
 
                 </li>
-                 <li title="Notes">
+                 <li title="Notes" class="{{ Request::is('admin/notes') ? 'current_section' : ''}}">
                     <a href="{{ route('notes') }}">
                         <span class="menu_icon"><i class="material-icons">note</i></span>
                         <span class="menu_title">Notes</span>

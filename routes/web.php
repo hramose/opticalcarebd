@@ -26,8 +26,13 @@ Route::post('/logout', 'LoginController@logout')->name('logout');
 Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     Route::get('dashboard','AdminController@admin')->name('adminDashboard');
     Route::get('dashboard/api','AdminController@getDue');
-    Route::get('notes','NotesController@notes')->name('notes');
-    Route::post('notes','NotesController@addNote');
+
+    Route::group(['prefix' => 'notes'], function () {
+        Route::get('/','NotesController@notes')->name('notes');
+        Route::post('/add','NotesController@addNote');
+        Route::post('/update','NotesController@updateNote');
+        Route::delete('/delete','NotesController@deleteNote');
+    });
 
     Route::group(['prefix' => 'sms'], function () {
       Route::get('/','SmsController@index')->name('sms');

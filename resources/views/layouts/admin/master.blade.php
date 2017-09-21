@@ -60,7 +60,7 @@
     </script>
     
 </head> 
-<body class="disable_transitions sidebar_main_open sidebar_main_swipe  {{ (Request::is('admin/notes')? 'header_double_height' : '') }}">
+<body class="disable_transitions sidebar_main_open sidebar_main_swipe">
 <div class="se-pre-con"></div>
 
 @include('layouts.admin.header')

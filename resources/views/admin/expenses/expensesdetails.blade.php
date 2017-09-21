@@ -145,7 +145,7 @@ Expenses Details
 
     <!--  datatables functions -->
     <script src="{{ asset('admin/assets/js/pages/plugins_datatables.min.js')}}"></script>
-        <script src="{{ asset('admin/assets/js/sweetalert-dev.js') }}"></script>
+        <script srprabhas new movie trailer c="{{ asset('admin/assets/js/sweetalert-dev.js') }}"></script>
 
         <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 

@@ -60,26 +60,35 @@ Dashboard
                     <div class="md-card">
                         <div class="md-card-content">
                             <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_sale peity_data">5,3,9,6,5,9,7,3,5,2</span></div>
-                            <span class="uk-text-muted uk-text-small">Sale</span>
-                            <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>142384</noscript></span></h2>
+                            <span class="uk-text-muted uk-text-small">Today Total Sale</span>
+                            <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>{{ $TTSell->total }}</noscript></span></h2>
                         </div>
                     </div>
                 </div>
-                <div>
+               <div>
                     <div class="md-card">
                         <div class="md-card-content">
-                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_orders peity_data">64/100</span></div>
-                            <span class="uk-text-muted uk-text-small">Orders Completed</span>
-                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>64</noscript></span>%</h2>
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_sale peity_data">5,3,9,6,5,9,7,3,5,2</span></div>
+                            <span class="uk-text-muted uk-text-small">Today Total Advance</span>
+                            <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>{{ $TTAdvance->total }}</noscript></span></h2>
                         </div>
                     </div>
                 </div>
+                 <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_sale peity_data">5,3,9,6,5,9,7,3,5,2</span></div>
+                            <span class="uk-text-muted uk-text-small">Today Total Due</span>
+                            <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>{{ $TTDPay->total }}</noscript></span></h2>
+                        </div>
+                    </div>
+                </div> 
                 <div>
                     <div class="md-card">
                         <div class="md-card-content">
-                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_live peity_data">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span></div>
-                            <span class="uk-text-muted uk-text-small">Visitors (live)</span>
-                            <h2 class="uk-margin-remove" id="peity_live_text">46</h2>
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_sale peity_data">5,3,9,6,5,9,7,3,5,2</span></div>
+                            <span class="uk-text-muted uk-text-small">Today Total Expense</span>
+                            <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>{{ $TTExpenses->total }}</noscript></span></h2>
                         </div>
                     </div>
                 </div>
