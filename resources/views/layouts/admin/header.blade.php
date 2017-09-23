@@ -20,29 +20,42 @@
                                 <div class="uk-grid uk-dropdown-grid">
                                     <div class="uk-width-3-3">
                                         <div class="uk-grid uk-grid-width-medium-1-3 uk-margin-bottom uk-text-center">
-                                            <a href="message" class="uk-margin-top">
-                                                <i class="material-icons md-36 md-color-light-green-600">&#xE158;</i>
-                                                <span class="uk-text-muted uk-display-block">Message</span>
-                                            </a>
-                                            <a href="sell-frame" class="uk-margin-top">
-                                                <i class="material-icons md-36 md-color-purple-600">&#xE53E;</i>
-                                                <span class="uk-text-muted uk-display-block">New Sell</span>
-                                            </a>
-                                            <a href="day-close-up" class="uk-margin-top">
+                                            <a href="{{ route('daycloseup') }}" class="uk-margin-top">
                                                 <i class="material-icons md-36 md-color-red-600">&#xE85C;</i>
                                                 <span class="uk-text-muted uk-display-block">Day Close Up</span>
                                             </a>
-                                            <a href="notes" class="uk-margin-top">
+                                            <a href="{{ route('sellFrame') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-purple-600">&#xE53E;</i>
+                                                <span class="uk-text-muted uk-display-block">Sell Frame</span>
+                                            </a>
+                                            <a href="{{ route('sellSunglass') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-purple-600">&#xE53E;</i>
+                                                <span class="uk-text-muted uk-display-block">Sell Sunglass</span>
+                                            </a>
+                                            <a href="{{ route('sms') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-light-green-600">&#xE158;</i>
+                                                <span class="uk-text-muted uk-display-block">SMS</span>
+                                            </a>
+                                            <a href="{{ route('sellContactlens') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-purple-600">&#xE53E;</i>
+                                                <span class="uk-text-muted uk-display-block">Sell Contact Lens</span>
+                                            </a>
+                                            <a href="{{ route('sellPlasticlens') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-purple-600">&#xE53E;</i>
+                                                <span class="uk-text-muted uk-display-block">Sell Plastic Lens</span>
+                                            </a>
+                                            
+                                            <a href="{{ route('notes') }}" class="uk-margin-top">
                                                 <i class="material-icons md-36 md-color-blue-600">&#xE89C;</i>
                                                 <span class="uk-text-muted uk-display-block">Notes</span>
                                             </a>
-                                            <a href="update-stock" class="uk-margin-top">
-                                                <i class="material-icons md-36 md-color-cyan-600">&#xE923;</i>
-                                                <span class="uk-text-muted uk-display-block">Update Stock</span>
+                                            <a href="{{ route('sells') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-cyan-600">&#xE53E;</i>
+                                                <span class="uk-text-muted uk-display-block">Sell</span>
                                             </a>                                            
-                                            <a href="all-category" class="uk-margin-top">
-                                                <i class="material-icons md-36 md-color-orange-600">&#xE87C;</i>
-                                                <span class="uk-text-muted uk-display-block">All Category</span>
+                                            <a href="{{ route('expenses') }}" class="uk-margin-top">
+                                                <i class="material-icons md-36 md-color-orange-600">&#xE53E;</i>
+                                                <span class="uk-text-muted uk-display-block">Expenses</span>
                                             </a>
                                         </div>
                                     </div>
@@ -136,7 +149,7 @@
                                 @endif
                                 
                                     <li><a href="#">{{  sentinel::getUser()->name }}</a></li>
-                                    <li><a href="change-password">Change Password</a></li>
+                                    <li><a href="#" data-uk-modal="{target:'#model_frame'}">Change Password</a></li>
                                     <li><a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();">
@@ -171,6 +184,48 @@
                 </script>  --}}
             </form>
         </div>
-    </header><!-- main header end -->
+          @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class='uk-alert uk-alert-success' data-uk-alert><a href='' class='uk-alert-close uk-close'></a>Opps.. {{ $error }}</div>
+            @endforeach   
+        @endif
 
-<html
+    </header><!-- main header end -->
+    
+<div class="uk-modal" id="model_frame">
+    <div class="uk-modal-dialog">
+        <div class="uk-modal-header">
+            <h3 class="uk-modal-title">Change Password</h3>
+        </div>
+        <form id="form_validation" action="{{ route('changePassword') }}" class="uk-form-stacked" method="POST">
+            {{ csrf_field() }}
+       
+            <div class="uk-grid" data-uk-grid-margin>
+            <div class="uk-width-medium-1-1">
+                <div class="parsley-row">
+                    <label for="quantity">New Password<span class="req">*</span></label>
+                    <input type="password"
+                                class="md-input"                                     
+                                name="password"
+                                required class="md-input" />
+                </div>
+            </div>
+        </div>
+        <div class="uk-grid" data-uk-grid-margin>
+            <div class="uk-width-medium-1-1">
+                <div class="parsley-row">
+                    <label for="password_confirmation">Password Confirmation<span class="req">*</span></label>
+                    <input type="password"
+                                name="password_confirmation"
+                                required class="md-input" />
+                </div>
+            </div>
+        </div>
+        <div class="uk-modal-footer uk-text-right">
+            <button type="button" class="md-btn md-btn-flat uk-modal-close">Close</button>
+            <button type="submit" class="md-btn md-btn-primary">Update Password</button>
+          
+        </div>
+    </form>
+    </div>
+</div>

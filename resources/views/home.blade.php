@@ -726,7 +726,7 @@ Home
   </div>
   <!-- end main container --> 
   <!-- Featured Slider -->
-  <section class="featured-pro container wow bounceInUp animated">
+  {{--  <section class="featured-pro container wow bounceInUp animated">
     <div class="slider-items-products">
       <div class="new_title center">
         <h2>Featured Products</h2>
@@ -1003,11 +1003,11 @@ Home
           <a class="shop-now" href="#">Learn More</a> </li>
       </ul>
     </div>
-  </div>
+  </div>  --}}
   <!--Offer silder End--> 
   
   <!-- Latest Blog -->
-  <section class="latest-blog wow bounceInUp animated">
+  {{--  <section class="latest-blog wow bounceInUp animated">
     <div class="container">
       <div class="row">
         <div class="new_title center">
@@ -1055,12 +1055,12 @@ Home
         </div>
       </div>
     </div>
-  </section>
+  </section>  --}}
   <!-- End Latest Blog --> 
   
   <!-- offer banner section -->
   
-  <div class="offer-banner-section wow bounceInUp animated">
+  {{--  <div class="offer-banner-section wow bounceInUp animated">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-sm-3 col-xs-6">
@@ -1077,7 +1077,7 @@ Home
         </div>
       </div>
     </div>
-  </div>
+  </div>  --}}
   <!-- end banner section -->
 @endsection
 

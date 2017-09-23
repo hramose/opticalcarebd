@@ -23,23 +23,38 @@ class RegistrationController extends Controller
             'password_confirmation' => 'required|min:5|max:20',
         ]);
         
-        $user = Sentinel::register($request->all());
+        $user = Sentinel::registerAndActivate($request->all());
         $activation = Activation::create($user);
-        $role = Sentinel::findRoleBySlug('customer');
+        $role = Sentinel::findRoleBySlug('manager');
         $role->users()->attach($user);
 
-        $this->sendEmail($user,$activation->code);
-
-        return redirect()->back()->with(['success' => 'Registration successful. Please check your email to activate your account:)']);
+        return redirect()->back()->with(['success' => 'Registration successful.']);
     }
-    private function sendEmail($user,$code)
+    public function changePassword(Request $request)
     {
-        Mail::send('emails.activation', [
-            'user' => $user,
-            'code' => $code
-        ],function($meassage) use ($user){
-            $meassage->to($user->email);
-            $meassage->subject("Hello $user->name , Activate your account.");
-        });
+        $this->validate($request,[
+            'password' => 'required|min:5|max:20|confirmed',
+            'password_confirmation' => 'required|min:5|max:20',
+        ]);
+        $id = Sentinel::getUser()->id;
+        $user = Sentinel::findById($id);
+        
+        // Setup new password.
+        $updatedData = ['password' => $request['password']];
+        // Update user.
+        Sentinel::update($user, $updatedData);
+
+        Sentinel::logout(null,true);
+        return back();
     }
+    // private function sendEmail($user,$code)
+    // {
+    //     Mail::send('emails.activation', [
+    //         'user' => $user,
+    //         'code' => $code
+    //     ],function($meassage) use ($user){
+    //         $meassage->to($user->email);
+    //         $meassage->subject("Hello $user->name , Activate your account.");
+    //     });
+    // }
 }

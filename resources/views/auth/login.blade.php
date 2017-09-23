@@ -23,7 +23,7 @@ Login
             <div class="content">
               <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
               <div class="buttons-set">
-              <a href="{{ route('register') }}">
+              <a href="">
                 <button class="button create-account"><span>Create an Account</span></button>
                 </a>
               </div>

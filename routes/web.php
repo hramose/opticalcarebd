@@ -13,9 +13,6 @@
 Route::get('/','HomeController@home')->name('home');
 
 Route::group(['middleware' => 'visitors'], function(){
-    Route::get('register','RegistrationController@register')->name('register');
-    Route::post('register','RegistrationController@createUser')->name('doRegister');
-
     Route::get('login','LoginController@login')->name('login');
     Route::post('login','LoginController@doLogin')->name('doLogin');
 });
@@ -24,6 +21,10 @@ Route::get('/activation/{email}/{activationCode}', 'ActivationController@activat
 Route::post('/logout', 'LoginController@logout')->name('logout');
 
 Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
+    Route::get('register','RegistrationController@register')->name('register');
+    Route::post('register','RegistrationController@createUser')->name('doRegister');
+    Route::post('changepassword','RegistrationController@changePassword')->name('changePassword');
+    
     Route::get('dashboard','AdminController@admin')->name('adminDashboard');
     Route::get('dashboard/api','AdminController@getDue');
 
@@ -47,9 +48,9 @@ Route::group(['prefix' => 'admin' , 'middleware' => 'admin'], function(){
     });
 
     Route::group(['prefix' => 'daycloseup'], function(){
-      Route::get('/','DaycloseupController@index');
+      Route::get('/','DaycloseupController@index')->name('daycloseup');
       Route::get('/api','DaycloseupController@getData');
-    Route::post('/add','DaycloseupController@addData');
+      Route::post('/add','DaycloseupController@addData');
       Route::delete('/delete','DaycloseupController@delete');
     });
 
