@@ -19,22 +19,20 @@ Home
             <div class="info">
               <div    class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='860'  data-y='60'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;max-width:auto;max-height:auto;white-space:nowrap;'>New Season</div>
               <div class='tp-caption line' data-x='860'  data-y='120'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>&nbsp;</div>
-              <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='860'  data-y='140'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>Summer Sale</div>
-              <div    class='tp-caption sfb  tp-resizeme ' data-x='860'  data-y='330'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a></div>
-              <div    class='tp-caption Title sft  tp-resizeme ' data-x='860'  data-y='220'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>In augue urna, nunc, tincidunt, augue,<br>
-                augue facilisis facilisis.</div>
-              <div    class='tp-caption Title sft  tp-resizeme small-size ' data-x='860'  data-y='370'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>Lorem ipsum dolor sit amet, consectetur elit.</div>
+              <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='860'  data-y='140'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>Embracing tradition. </div>
+              <div    class='tp-caption sfb  tp-resizeme ' data-x='860'  data-y='330'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'> {{--<a href='#' class="view-more">View More</a>--}} <a href='{{ route('login') }}' class="buy-btn">Login</a></div>
+              <div    class='tp-caption Title sft  tp-resizeme ' data-x='860'  data-y='220'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>Reviving Craftsmanship. Re-introducing quality.</div>
+              <div    class='tp-caption Title sft  tp-resizeme small-size ' data-x='860'  data-y='370'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'></div>
             </div>
           </li>
           <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb="{{ asset('main/images/slide-img2.jpg') }}"><img src="{{ asset('main/images/slide-img2.jpg') }}" alt="slide" data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat'  />
             <div class="info">
-              <div class='tp-caption ExtraLargeTitle sft tp-resizeme ' data-x='395'  data-y='60'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;max-width:auto;max-height:auto;white-space:nowrap;'>NEW ARRIVALS</div>
+              <div class='tp-caption ExtraLargeTitle sft tp-resizeme ' data-x='395'  data-y='60'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2;max-width:auto;max-height:auto;white-space:nowrap;'>YOU’RE ALWAYS</div>
               <div class='tp-caption line' data-x='395'  data-y='120'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>&nbsp;</div>
-              <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='395'  data-y='140'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>Lorem a Cosmo</div>
-              <div    class='tp-caption Title1 sft tp-resizeme' data-x='395'  data-y='220'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>In augue urna, nunc, tincidunt, augue,<br>
-                augue facilisis facilisis.</div>
-              <div    class='tp-caption sfb  tp-resizeme ' data-x='395'  data-y='330'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a></div>
-              <div    class='tp-caption Title sft  tp-resizeme ' data-x='395'  data-y='370'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;font-size:11px'>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+              <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='395'  data-y='140'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3;max-width:auto;max-height:auto;white-space:nowrap;'>WELCOME</div>
+              <div    class='tp-caption Title1 sft tp-resizeme' data-x='395'  data-y='220'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>To Optical Care</div>
+              <div    class='tp-caption sfb  tp-resizeme ' data-x='395'  data-y='330'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;'>{{--<a href='#' class="view-more">View More</a>--}} <a href='{{route('login')}}' class="buy-btn">Login</a></div>
+              <div    class='tp-caption Title sft  tp-resizeme ' data-x='395'  data-y='370'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4;max-width:auto;max-height:auto;white-space:nowrap;font-size:11px'></div>
             </div>
           </li>
         </ul>
@@ -47,7 +45,7 @@ Home
       <div class="row">
         <div class="col-lg-3 col-sm-3 col-xs-6">
           <div class="col add-banner1">
-            <div class="top-b-text"><strong>Designer Shoes</strong> For Women</div>
+            <div class="top-b-text"><strong>Designer Frame</strong> For Men and Women</div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-3 col-xs-6">
@@ -55,11 +53,11 @@ Home
         </div>
         <div class="col-lg-3 col-sm-3 col-xs-6">
           <div class="col add-banner2">
-            <div class="top-b-text"><strong>Luxury Handbags</strong>2015 New Arrive</div>
+            <div class="top-b-text"><strong>Luxury Sunglass</strong>2017 New Arrive</div>
           </div>
         </div>
         <div class="col-lg-3 col-sm-3 col-xs-6">
-          <div class="col last offer"><strong>New Collection</strong> Lorem ipsum dolor.</div>
+          <div class="col last offer"><strong>New Collection</strong> For Everyone </div>
         </div>
       </div>
     </div>

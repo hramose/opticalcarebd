@@ -9,7 +9,7 @@
           <ul id="nav" class="hidden-xs">
             <li class="level0 nav-8 level-top active"><a href="{{ route('home') }}"><span>Home</span></a></li>
             {{--  <li class="level0 nav-8 level-top"><a href="grid.html" class="level-top"><span>Shop</span></a></li>  --}}
-            <li class="level0 nav-8 level-top"><a href="grid.html" class="level-top"><span>About Us</span></a></li>
+            <li class="level0 nav-8 level-top"><a href="{{route('aboutus')}}" class="level-top"><span>About Us</span></a></li>
             <li class="level0 nav-8 level-top"><a href="grid.html" class="level-top"><span>Contact Us</span></a></li>
           </ul>
           <div class="menu_top pull-right">

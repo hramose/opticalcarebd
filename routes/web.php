@@ -11,6 +11,7 @@
 |
 */
 Route::get('/','HomeController@home')->name('home');
+Route::get('aboutus','HomeController@aboutUs')->name('aboutus');
 
 Route::group(['middleware' => 'visitors'], function(){
     Route::get('login','LoginController@login')->name('login');

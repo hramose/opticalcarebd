@@ -5,12 +5,12 @@
         <div class="row">
           <div class="col-sm-3 col-xs-12"> 
             <!-- Header Logo -->
-            <div class="logo"><a title="Optical Care BD" href="index.html"><img alt="Optical Care BD" src="{{ asset('main/images/logo.png') }}"></a></div>
+            <div class="logo"><a title="Optical Care BD" href="{{ route('home') }}"><img alt="Optical Care BD" src="{{ asset('main/images/logo.png') }}"></a></div>
             <!-- End Header Logo --> 
           </div>
           <div class="col-lg-9 col-xs-12 right_menu">
             <div class="toplinks"> 
-              <!-- Default Welcome Message -->
+              {{--  <!-- Default Welcome Message -->
               <div class="welcome-msg hidden-xs">Default welcome msg! </div>
               <!-- End Default Welcome Message -->
               <div class="links">
@@ -29,9 +29,9 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Advanced Search</a></li>
                   </ul>
                 </div>
-                <!-- End Header Company -->
+                <!-- End Header Company -->  --}}
                 
-                <div class="login"><a href="#"><span class="hidden-xs">Log In</span></a></div>
+                <div class="login"><a href="{{ route('login') }}"><span class="hidden-xs">Log In</span></a></div>
               </div>
               <!-- links --> 
             </div>

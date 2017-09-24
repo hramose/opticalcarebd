@@ -47,7 +47,7 @@
   <!-- Footer -->
   <footer>
     <section class="footer-navbar">
-      <div class="footer-inner">
+      {{--  <div class="footer-inner">
         <div class="container">
           <div class="row">
             <div class="col-sm-12 col-xs-12 col-lg-8">
@@ -122,7 +122,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>  --}}
       <div class="footer-middle">
         <div class="container">
           <div class="row">
